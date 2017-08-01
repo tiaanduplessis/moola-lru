@@ -1,0 +1,34 @@
+{
+  "name": "moola-lru",
+  "version": "1.0.0",
+  "description": "Express-style lru cache middleware",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/tiaanduplessis/moola-lru",
+    "type": "git"
+  },
+  "homepage": "https://github.com/tiaanduplessis/moola-lru",
+  "bugs": "https://github.com/tiaanduplessis/moola-lru",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "prettier-standard index.js",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "npm run test",
+    "precommit": "npm test",
+    "pretest": "npm run lint:fix"
+  },
+  "author": "tiaanduplessis <tiaanduplessis@hotmail.com>",
+  "devDependencies": {
+    "jest": "^20.0.4",
+    "husky": "^0.14.3",
+    "prettier-standard": "^6.0.0"
+  },
+  "dependencies": {
+    "express": "~4.15.3",
+    "lru": "~3.1.0"
+  }
+}
