@@ -55,6 +55,8 @@
 
 ## Install
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tiaanduplessis/moola-lru.svg)](https://greenkeeper.io/)
+
 ```sh
 $ npm install moola-lru
 # OR
