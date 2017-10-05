@@ -23,12 +23,12 @@
   },
   "author": "tiaanduplessis <tiaanduplessis@hotmail.com>",
   "devDependencies": {
-    "jest": "^20.0.4",
+    "jest": "^21.2.1",
     "husky": "^0.14.3",
-    "prettier-standard": "^6.0.0"
+    "prettier-standard": "^7.0.1"
   },
   "dependencies": {
-    "express": "~4.15.3",
+    "express": "~4.16.1",
     "lru": "~3.1.0"
   }
 }
