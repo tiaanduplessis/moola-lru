@@ -81,6 +81,24 @@ app.listen(5000)
 
 Middlware build on [lru](https://github.com/chriso/lru). Please see [available options](https://github.com/chriso/lru#api).
 
+## Cache keys and route selection
+
+Entries use an unambiguous tuple of the effective request URL (`req.url`, falling
+back to `req.originalUrl`), `Accept`, `accepts`, and `Accept-Encoding`. Query
+strings are kept as supplied. The nonstandard `accepts` header remains a separate
+component for compatibility; it does not replace the standard `Accept` header.
+Absent and empty header values have different keys.
+
+Only use this middleware on routes where requests with the same key may share a
+response body. Keys do not include the HTTP method, cookies, authorization, user
+identity, or other headers, and the middleware does not interpret `Vary` or
+`Cache-Control`. Authenticated or personalized responses are not automatically
+safe to cache. Route selection and any additional variation or privacy policy
+remain the application's responsibility.
+
+`res.sendCached` caches the body only, not the response status or headers. A hit
+sends that body through the current response and skips the downstream handler.
+
 ## Contributing
 
 Contributions are welcome!

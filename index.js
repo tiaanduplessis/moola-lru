@@ -6,9 +6,12 @@ const moolaLru = (opts = 50) => {
   const cache = new Lru(opts)
 
   const handle = (req, res, next) => {
-    const key = `${req.url || req.originalUrl}.${req.header(
-      'accepts'
-    )}.${req.header('accept-encoding')}`
+    const key = JSON.stringify([
+      req.url || req.originalUrl,
+      req.header('accept'),
+      req.header('accepts'),
+      req.header('accept-encoding')
+    ])
 
     const value = cache.get(key)
 
